@@ -1,0 +1,26 @@
+<div>
+    <section class="heading">
+      <span class="page-title font-weight-bold font-italic">[{{ title }}]</span>
+      <a routerLink="/user/create">
+        <img width="20" height="20" src="assets/add-icon.png" title="Add New" />
+  </a>
+    </section>
+    <table *ngIf="actors" class="table table-sm table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>BirthDate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let actor of actors">
+          <td>{{ actor.id }}</td>
+          <td>{{ actor.firstName }} {{actor.lastName}}</td>
+          <td>{{ actor.gender }}</td>
+          <td>{{ actor.birthDate | date: "MM/dd/yyyy" }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
